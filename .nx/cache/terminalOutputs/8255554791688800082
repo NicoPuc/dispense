@@ -1,5 +1,0 @@
-chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 3.06 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
-
-[1m[31mERROR[39m[22m in [1munable to locate 'C:/Users/nicol/OneDrive/Escritorio/Programacion/despens/apps/backend/src/assets/**/*' glob[39m[22m
-
-webpack compiled with [1m[31m1 error[39m[22m (20230ccfd6863062)

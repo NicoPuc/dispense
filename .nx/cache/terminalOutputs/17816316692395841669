@@ -1,6 +1,0 @@
-
-Linting "frontend"...
-Pages directory cannot be found at C:\Users\nicol\OneDrive\Escritorio\Programacion\despens\pages or C:\Users\nicol\OneDrive\Escritorio\Programacion\despens\src\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.
-
-✔ All files pass linting
-
