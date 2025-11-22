@@ -1,0 +1,88 @@
+{
+  "name": "backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/backend",
+        "webpackConfig": "apps/backend/webpack.config.js",
+        "main": "apps/backend/src/main.ts",
+        "tsConfig": "apps/backend/tsconfig.app.json",
+        "assets": ["apps/backend/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "backend:build:development"
+        },
+        "production": {
+          "buildTarget": "backend:build:production",
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "backend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "backend:build:development"
+        },
+        "production": {
+          "buildTarget": "backend:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/backend/**/*.ts"]
+      }
+    },
+    "db-reset": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "parallel": false,
+        "commands": [
+          "npx typeorm-ts-node-commonjs schema:drop -d src/data-source.ts",
+          "npx typeorm-ts-node-commonjs migration:run -d src/data-source.ts"
+        ]
+      }
+    },
+    "db-seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "npx ts-node src/seed.ts"
+      }
+    },
+    "db-migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "npx typeorm-ts-node-commonjs migration:run -d src/data-source.ts"
+      }
+    },
+    "db-migration-generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "npx typeorm-ts-node-commonjs migration:generate -d src/data-source.ts src/migrations/{args.name}"
+      }
+    }
+  }
+}

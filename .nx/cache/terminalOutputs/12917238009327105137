@@ -1,0 +1,10 @@
+
+Linting "frontend"...
+
+ NX   All files matching the following patterns are ignored:
+
+- 'apps/frontend/**/*.{ts,tsx,js,jsx}'
+
+Please check your '.eslintignore' file.
+Pass --verbose to see the stacktrace.
+

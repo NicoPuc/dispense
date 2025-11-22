@@ -1,0 +1,5 @@
+
+ NX   Using "isolatedConfig" without a "webpackConfig" is not supported.
+
+Pass --verbose to see the stacktrace.
+

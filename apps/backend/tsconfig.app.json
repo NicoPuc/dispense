@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2021",
+    "sourceMap": true,
+    "outDir": "../../dist/apps/backend",
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "../../libs/shared-validation/src/index.ts", "../../libs/shared-utils/src/index.ts"],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}
+

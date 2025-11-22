@@ -1,0 +1,10 @@
+
+Linting "shared-validation"...
+
+ NX   All files matching the following patterns are ignored:
+
+- 'libs/shared-validation/**/*.ts'
+
+Please check your '.eslintignore' file.
+Pass --verbose to see the stacktrace.
+
