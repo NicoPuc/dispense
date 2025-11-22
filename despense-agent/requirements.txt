@@ -36,6 +36,11 @@ requests>=2.31.0          # Cliente HTTP para comunicarse con WhatsApp API
 # ----------------------------------------------------------------------------
 python-dotenv>=1.0.0      # Para cargar variables de entorno desde .env
 typing-extensions>=4.9.0   # Extensiones de tipos para Python
+pydub>=0.25.1            # Para conversión de formatos de audio (OGG a WAV)
+                          # Nota: Requiere ffmpeg instalado en el sistema
+                          # macOS: brew install ffmpeg
+                          # Linux: sudo apt-get install ffmpeg
+                          # Windows: Descargar de https://ffmpeg.org/download.html
 
 # ----------------------------------------------------------------------------
 # Dependencias transitivas (se instalan automáticamente)
