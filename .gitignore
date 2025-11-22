@@ -5,3 +5,4 @@ dist/
 .next/
 despense-agent/__pycache__
 despense-agent/.env
+despense-agent/venv/
